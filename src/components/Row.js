@@ -4,12 +4,15 @@ function Row(props) {
     return (
         <tr>
             <th>{props.number}</th>
-            {['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'].map(column => {
+            {props.data.map((squareData, index) => {
+                const file = String.fromCharCode(97 + index)
+
                 return (
                     <Square 
-                        key={column + props.number}
-                        row={props.number}
-                        column={column}
+                        key={file + props.number} 
+                        row={props.number} 
+                        column={file} 
+                        data={squareData} 
                     />
                 )
             })}

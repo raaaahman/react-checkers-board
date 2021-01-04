@@ -5,6 +5,7 @@ function Square(props) {
 
     return ( 
         <td className={'square ' + (isLight ? 'light' : 'dark')}>
+            {props.data}
         </td>
     )
 }
