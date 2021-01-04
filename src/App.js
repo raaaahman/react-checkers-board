@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Row from './components/Row'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <table className='no-border'>
+      <thead>
+        <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
+      </thead>
+      <tbody>
+        {[8, 7, 6, 5, 4, 3, 2, 1].map(number => <Row key={number.toString()} number={number} />)}
+      </tbody>
+      <tfoot>
+        <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
+      </tfoot>
+    </table>
   );
 }
 
