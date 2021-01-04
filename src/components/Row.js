@@ -1,18 +1,18 @@
-function Row(props) {
-    const isEven = props.number % 2 === 0
+import Square from './Square'
 
+function Row(props) {
     return (
         <tr>
             <th>{props.number}</th>
-            {isEven ? <td className='square light'></td> : null}
-            <td className='square dark'></td>
-            <td className='square light'></td>
-            <td className='square dark'></td>
-            <td className='square light'></td>
-            <td className='square dark'></td>
-            <td className='square light'></td>
-            <td className='square dark'></td>
-            {isEven ? null : <td className='square light'></td>}
+            {['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'].map(column => {
+                return (
+                    <Square 
+                        key={column + props.number}
+                        row={props.number}
+                        column={column}
+                    />
+                )
+            })}
             <th>{props.number}</th>
         </tr>
     )
