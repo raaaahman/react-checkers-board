@@ -14,3 +14,8 @@
 .dark {
   background-color: #D18B47;
 }
+
+.piece {
+  display:block;
+  margin: auto;
+}
