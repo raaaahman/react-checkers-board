@@ -1,16 +1,18 @@
 import './App.css';
 import Row from './components/Row'
+import BlackMan from './components/pieces/BlackMan'
+import WhiteMan from './components/pieces/WhiteMan'
 
 function App() {
   const data = [
-    [' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'],
-    ['o', ' ', 'o', ' ', 'o', ' ', 'o', ' '],
-    [' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    ['O', ' ', 'O', ' ', 'O', ' ', 'O', ' '],
-    [' ', 'O', ' ', 'O', ' ', 'O', ' ', 'O'],
-    ['O', ' ', 'O', ' ', 'O', ' ', 'O', ' ']
+    [null, BlackMan, null, BlackMan, null, BlackMan, null, BlackMan],
+    [BlackMan, null, BlackMan, null, BlackMan, null, BlackMan, null],
+    [null, BlackMan, null, BlackMan, null, BlackMan, null, BlackMan],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan, null],
+    [null, WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan],
+    [WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan, null]
   ]
 
   return (

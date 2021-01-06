@@ -1,11 +1,10 @@
 import Square from './Square'
-import Piece from './Piece'
 
 function Row(props) {
     return (
         <tr>
             <th>{props.number}</th>
-            {props.data.map((squareData, index) => {
+            {props.data.map((Piece, index) => {
                 const column = String.fromCharCode(97 + index)
 
                 return (
@@ -14,7 +13,7 @@ function Row(props) {
                         row={props.number} 
                         column={column}
                     >
-                        {squareData.trim() && <Piece data={squareData} />} 
+                        {Piece && <Piece/>}
                     </Square>
                 )
             })}
