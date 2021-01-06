@@ -2,15 +2,17 @@ import './App.css';
 import Row from './components/Row'
 import BlackMan from './components/pieces/BlackMan'
 import WhiteMan from './components/pieces/WhiteMan'
+import BlackKing from './components/pieces/BlackKing'
+import WhiteKing from './components/pieces/WhiteKing'
 
 function App() {
   const data = [
     [null, BlackMan, null, BlackMan, null, BlackMan, null, BlackMan],
     [BlackMan, null, BlackMan, null, BlackMan, null, BlackMan, null],
-    [null, BlackMan, null, BlackMan, null, BlackMan, null, BlackMan],
+    [null, BlackMan, null, BlackKing, null, BlackMan, null, BlackKing],
     [null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null],
-    [WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan, null],
+    [WhiteKing, null, WhiteMan, null, WhiteKing, null, WhiteMan, null],
     [null, WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan],
     [WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan, null]
   ]
