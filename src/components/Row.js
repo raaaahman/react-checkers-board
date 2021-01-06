@@ -1,19 +1,21 @@
 import Square from './Square'
+import Piece from './Piece'
 
 function Row(props) {
     return (
         <tr>
             <th>{props.number}</th>
             {props.data.map((squareData, index) => {
-                const file = String.fromCharCode(97 + index)
+                const column = String.fromCharCode(97 + index)
 
                 return (
                     <Square 
-                        key={file + props.number} 
+                        key={column + props.number} 
                         row={props.number} 
-                        column={file} 
-                        data={squareData} 
-                    />
+                        column={column}
+                    >
+                        {squareData.trim() && <Piece data={squareData} />} 
+                    </Square>
                 )
             })}
             <th>{props.number}</th>

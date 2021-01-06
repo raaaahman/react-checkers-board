@@ -1,5 +1,3 @@
-import Piece from './Piece'
-
 function Square(props) {
     const isEvenRow = (props.row % 2 === 0)
     const isEvenColumn = (props.column.charCodeAt() % 2 !== 0)
@@ -7,7 +5,7 @@ function Square(props) {
 
     return ( 
         <td className={'square ' + (isLight ? 'light' : 'dark')}>
-            {props.data.trim() && <Piece data={props.data} /> }
+            {props.children}
         </td>
     )
 }
