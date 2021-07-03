@@ -14,5 +14,6 @@ function squareStyle(row, column) {
     return isLight ? 'light' : 'dark'
 }
 
+export { squareStyle }
 export default Square
 
