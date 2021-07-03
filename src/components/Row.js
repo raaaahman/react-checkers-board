@@ -1,6 +1,8 @@
 import Square from './Square'
 
 function Row(props) {
+    const makeSquare = makeSquareForRow(props.number)
+
     return (
         <tr>
             <th>{props.number}</th>
@@ -8,14 +10,16 @@ function Row(props) {
             <th>{props.number}</th>
         </tr>
     )
+}
 
-    function makeSquare(Piece, index) {
+function makeSquareForRow(rowNumber) {
+    return function (Piece, index) {
         const column = String.fromCharCode(97 + index)
 
         return (
             <Square
-                key={column + props.number}
-                row={props.number}
+                key={column + rowNumber}
+                row={rowNumber}
                 column={column}
             >
                 {Piece && <Piece />}
