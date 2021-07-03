@@ -1,7 +1,7 @@
 import Square from './Square'
 
 function Row(props) {
-    const makeSquare = makeSquareForRow(props.number)
+    const makeSquare = (Piece, index) => makeSquareForRow(props.number, Piece, index)
 
     return (
         <tr>
@@ -12,20 +12,18 @@ function Row(props) {
     )
 }
 
-function makeSquareForRow(rowNumber) {
-    return function (Piece, index) {
-        const column = String.fromCharCode(97 + index)
+function makeSquareForRow(rowNumber, Piece, index) {
+    const column = String.fromCharCode(97 + index)
 
-        return (
-            <Square
-                key={column + rowNumber}
-                row={rowNumber}
-                column={column}
-            >
-                {Piece && <Piece />}
-            </Square>
-        )
-    }
+    return (
+        <Square
+            key={column + rowNumber}
+            row={rowNumber}
+            column={column}
+        >
+            {Piece && <Piece />}
+        </Square>
+    )
 }
 
 export default Row
