@@ -23,17 +23,19 @@ function App() {
         <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
       </thead>
       <tbody>
-        {data.map((rowData, index) => {
-          const number = data.length - index
-          
-          return <Row key={number.toString()} number={number} data={rowData} />
-        })}
+        {data.map(makeRow)}
       </tbody>
       <tfoot>
         <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
       </tfoot>
     </table>
-  );
+  )
+
+  function makeRow(rowData, index) {
+    const number = data.length - index;
+
+    return <Row key={number.toString()} number={number} data={rowData} />;
+  }
 }
 
 export default App;
