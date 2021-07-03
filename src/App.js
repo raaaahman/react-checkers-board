@@ -1,4 +1,5 @@
 import './App.css';
+import { fixFirst } from './utils'
 import Row from './components/Row'
 import BlackMan from './components/pieces/BlackMan'
 import WhiteMan from './components/pieces/WhiteMan'
@@ -17,6 +18,8 @@ function App() {
     [WhiteMan, null, WhiteMan, null, WhiteMan, null, WhiteMan, null]
   ]
 
+  const makeRow = fixFirst(makeRowIn, data.length)
+
   return (
     <table className='no-border'>
       <thead>
@@ -30,12 +33,12 @@ function App() {
       </tfoot>
     </table>
   )
+}
 
-  function makeRow(rowData, index) {
-    const number = data.length - index;
+function makeRowIn(numberOfRows, rowData, index) {
+  const number = numberOfRows - index;
 
-    return <Row key={number.toString()} number={number} data={rowData} />;
-  }
+  return <Row key={number.toString()} number={number} data={rowData} />;
 }
 
 export default App;
